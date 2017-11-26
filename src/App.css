@@ -1,0 +1,84 @@
+/*&--lastAdded {
+     background-color: red;
+     text-decoration: underline;
+ }*/
+
+
+.button {
+    padding: 1rem;
+    background-color: chocolate;
+    font-size: 1rem;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+
+
+@media only screen and (min-width: 40rem)  {
+    flex-direction: row;
+}
+
+}
+
+
+@define-mixin innerFlexBoxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.aside {
+    flex: 1;
+    @mixin innerFlexBoxContainer;
+}
+
+.section {
+    flex: 2;
+@mixin innerFlexBoxContainer;
+
+}
+
+.ul {
+@mixin innerFlexBoxContainer;
+    list-style-type: none;
+}
+
+
+.li {
+    margin-bottom: 1rem;
+}
+
+.h2 {
+    margin-top: 4rem;
+}
+
+@define-mixin inputItemInList $color {
+    background-color: $(color);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.listName {
+@mixin inputItemInList red;
+
+    &--lastSelected {
+     text-decoration: underline;
+ }
+
+
+}
+
+.categoryName {
+@mixin inputItemInList grey;
+}
+
+
+
+
+
