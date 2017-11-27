@@ -9,7 +9,6 @@ import SectionPresentation from './components/presentation/pageLayout/SectionPre
 const App = () => (
 
 <main className="main">
-    <h1>Lists and their Categories</h1>
     <AsidePresentation />
     <SectionPresentation />
 </main>
