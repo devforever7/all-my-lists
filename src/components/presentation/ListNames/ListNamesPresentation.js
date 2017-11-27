@@ -1,7 +1,6 @@
 import React from 'react';
 import ListNamePresentation from './ListNamePresentation';
 
-/*className={listNameKey === lastAddedListId ? 'listName listName--lastAdded' : 'listName'}*/
 
 
 const ListNamesPresentation = ({ listNames, selectedListId, onListNameBlur, onListNameClick }) => (
@@ -17,15 +16,14 @@ const ListNamesPresentation = ({ listNames, selectedListId, onListNameBlur, onLi
                 {...listNames[listNameKey]}
                 onChange={e => onListNameBlur(listNameKey, e.target.value)}
                 onClick={e => onListNameClick(listNameKey)}
-                isSelected={listNameKey === selectedListId}
-                isNotSelected={listNameKey !== selectedListId}
+                selectedListId={selectedListId}
+                className={selectedListId === listNameKey ?  "listName listName--lastSelected" : "listName"}
             />
 
         )}
     </ul>
 );
 
-/*selectedListId={selectedListId}*/
 
 
 export default ListNamesPresentation;
