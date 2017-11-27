@@ -17,7 +17,7 @@ const ListNamesPresentation = ({ listNames, selectedListId, onListNameBlur, onLi
                 onChange={e => onListNameBlur(listNameKey, e.target.value)}
                 onClick={e => onListNameClick(listNameKey)}
                 selectedListId={selectedListId}
-                className={selectedListId === listNameKey ?  "listName listName--lastSelected" : "listName"}
+
             />
 
         )}

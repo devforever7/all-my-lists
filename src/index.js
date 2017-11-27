@@ -9,12 +9,13 @@ import defaultListsState  from './initialState/listNamesInitialState';
 import defaultCategoriesState  from './initialState/categoryNamesInitialState';
 import defaultItemsState  from './initialState/itemNamesInitialState';
 import lastSelectedState  from './initialState/lastSelectedInitialState';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 
 
-let store = createStore(listsApp, Object.assign({}, defaultListsState, defaultCategoriesState, defaultItemsState, lastSelectedState), applyMiddleware(thunk));
+let store = createStore(listsApp, Object.assign({}, defaultListsState, defaultCategoriesState, defaultItemsState, lastSelectedState),
+    compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
 
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
 registerServiceWorker();
